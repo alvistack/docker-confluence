@@ -1,12 +1,12 @@
 Docker Image Packaging for Atlassian Confluence
-=========================================
+===============================================
 
 [![Travis](https://img.shields.io/travis/alvistack/docker-confluence.svg)](https://travis-ci.org/alvistack/docker-confluence)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/docker-confluence.svg)](https://hub.docker.com/r/alvistack/docker-confluence/)
 
-Confluence Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
+Confluence is where you create, organize and discuss work with your team.
 
 Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
@@ -111,8 +111,7 @@ container and start a new one based on a more recent image:
 As your data is stored in the data volume directory on the host, it will still
 be available after the upgrade.
 
-Note: Please make sure that you don't accidentally remove the confluence
-container and its volumes using the -v option.
+Note: Please make sure that you don't accidentally remove the confluence container and its volumes using the -v option.
 
 Backup
 ------

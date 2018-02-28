@@ -38,7 +38,7 @@ ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
 VOLUME $CONFLUENCE_HOME
 WORKDIR $CONFLUENCE_HOME
 
-EXPOSE 8080 8005
+EXPOSE 8090 8000
 
 ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
 CMD [ "/etc/init.d/confluence", "start", "-fg" ]
@@ -46,7 +46,7 @@ CMD [ "/etc/init.d/confluence", "start", "-fg" ]
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractiev apt-get install -y alien apt-transport-https apt-utils aptitude bzip2 ca-certificates curl debian-archive-keyring debian-keyring htop psmisc python-apt rsync sudo unzip vim wget zip \
+    && DEBIAN_FRONTEND=noninteractiev apt-get install -y alien apt-transport-https apt-utils aptitude bzip2 ca-certificates curl debian-archive-keyring debian-keyring git htop psmisc python-apt rsync sudo unzip vim wget zip \
     && apt-get -y autoremove \
     && apt-get -y autoclean \
     && rm -rf /var/lib/apt/lists/*
@@ -61,7 +61,7 @@ RUN set -ex \
 
 # Install Atlassian CONFLUENCE
 RUN set -ex \
-    && ARCHIVE="`mktemp --suffix=tar.gz`" \
+    && ARCHIVE="`mktemp --suffix=.tar.gz`" \
     && curl -skL $CONFLUENCE_DOWNLOAD_URL > $ARCHIVE \
     && mkdir -p $CONFLUENCE_CATALINA \
     && tar zxf $ARCHIVE --strip-components=1 -C $CONFLUENCE_CATALINA \
