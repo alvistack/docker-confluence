@@ -61,7 +61,7 @@ RUN set -ex \
 
 # Install Atlassian CONFLUENCE
 RUN set -ex \
-    && ARCHIVE="`mktemp --suffix=tar.gz`" \
+    && ARCHIVE="`mktemp --suffix=.tar.gz`" \
     && curl -skL $CONFLUENCE_DOWNLOAD_URL > $ARCHIVE \
     && mkdir -p $CONFLUENCE_CATALINA \
     && tar zxf $ARCHIVE --strip-components=1 -C $CONFLUENCE_CATALINA \
