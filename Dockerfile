@@ -38,7 +38,7 @@ ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
 VOLUME $CONFLUENCE_HOME
 WORKDIR $CONFLUENCE_HOME
 
-EXPOSE 8080 8005
+EXPOSE 8090 8000
 
 ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
 CMD [ "/etc/init.d/confluence", "start", "-fg" ]
