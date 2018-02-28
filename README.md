@@ -111,8 +111,7 @@ container and start a new one based on a more recent image:
 As your data is stored in the data volume directory on the host, it will still
 be available after the upgrade.
 
-Note: Please make sure that you don't accidentally remove the confluence
-container and its volumes using the -v option.
+Note: Please make sure that you don't accidentally remove the confluence container and its volumes using the -v option.
 
 Backup
 ------
