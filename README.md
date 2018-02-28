@@ -6,7 +6,7 @@ Docker Image Packaging for Atlassian Confluence
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/docker-confluence.svg)](https://hub.docker.com/r/alvistack/docker-confluence/)
 
-Confluence Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
+Confluence is where you create, organize and discuss work with your team.
 
 Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
