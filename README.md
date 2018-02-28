@@ -1,5 +1,5 @@
 Docker Image Packaging for Atlassian Confluence
-=========================================
+===============================================
 
 [![Travis](https://img.shields.io/travis/alvistack/docker-confluence.svg)](https://travis-ci.org/alvistack/docker-confluence)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
