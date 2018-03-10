@@ -18,7 +18,7 @@ ENV CONFLUENCE_OWNER             "daemon"
 ENV CONFLUENCE_GROUP             "daemon"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
-ENV CONFLUENCE_DOWNLOAD_URL      "http://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.7.1.tar.gz"
+ENV CONFLUENCE_DOWNLOAD_URL      "http://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.7.2.tar.gz"
 
 ENV JAVA_HOME                    "/usr/java/default"
 ENV JAVA_DOWNLOAD_URL            "http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jre-8u162-linux-x64.rpm"
