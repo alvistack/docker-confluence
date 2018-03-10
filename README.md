@@ -4,7 +4,7 @@ Docker Image Packaging for Atlassian Confluence
 [![Travis](https://img.shields.io/travis/alvistack/docker-confluence.svg)](https://travis-ci.org/alvistack/docker-confluence)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/docker-confluence.svg)](https://hub.docker.com/r/alvistack/docker-confluence/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence.svg)](https://hub.docker.com/r/alvistack/confluence/)
 
 Confluence is where you create, organize and discuss work with your team.
 
@@ -24,7 +24,7 @@ Volume permission is managed by entry scripts. To get started you can use a data
 Start Atlassian Confluence Server:
 
     # Pull latest image
-    docker pull alvistack/docker-confluence
+    docker pull alvistack/confluence
 
     # Run as detach
     docker run \
@@ -32,7 +32,7 @@ Start Atlassian Confluence Server:
         --name confluence \
         --publish 8090:8090 \
         --volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
-        alvistack/docker-confluence
+        alvistack/confluence
 
 **Success**. Confluence is now available on <http://localhost:8090>
 
@@ -121,7 +121,7 @@ For evaluations you can use the built-in database that will store its files in t
 Versioning
 ----------
 
-The `latest` tag matches the most recent version of this repository. Thus using `alvistack/docker-confluence:latest` or `alvistack/docker-confluence` will ensure you are running the most up to date version of this image.
+The `latest` tag matches the most recent version of this repository. Thus using `alvistack/confluence:latest` or `alvistack/confluence` will ensure you are running the most up to date version of this image.
 
 License
 -------
