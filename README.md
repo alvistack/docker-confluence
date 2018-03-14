@@ -10,6 +10,12 @@ Confluence is where you create, organize and discuss work with your team.
 
 Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
+Supported Tags and Respective `Dockerfile` Links
+------------------------------------------------
+
+-   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-confluencec/blob/master/Dockerfile)
+-   [`6.7` (6.7/Dockerfile)](https://github.com/alvistack/docker-confluencec/blob/6.7/Dockerfile)
+
 Overview
 --------
 
