@@ -35,7 +35,7 @@ WORKDIR $CONFLUENCE_HOME
 EXPOSE 8000
 EXPOSE 8090
 
-ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
+ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "/etc/init.d/confluence", "start", "-fg" ]
 
 # Prepare APT depedencies
