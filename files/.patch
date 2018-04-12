@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bin/setenv.sh
---- a/opt/atlassian/confluence/bin/setenv.sh	2018-03-14 09:24:44.298849570 +0800
-+++ b/opt/atlassian/confluence/bin/setenv.sh	2018-03-10 22:10:03.758414933 +0800
+--- a/opt/atlassian/confluence/bin/setenv.sh	2018-04-04 14:49:56.000000000 +0800
++++ b/opt/atlassian/confluence/bin/setenv.sh	2018-04-12 11:44:02.553775850 +0800
 @@ -14,16 +14,16 @@ export CATALINA_PID
  
  PRGDIR=`dirname "$0"`
@@ -87,32 +87,29 @@ diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bi
  
  export CATALINA_OPTS
 diff -urp a/opt/atlassian/confluence/conf/server.xml b/opt/atlassian/confluence/conf/server.xml
---- a/opt/atlassian/confluence/conf/server.xml	2018-03-14 09:24:55.565713661 +0800
-+++ b/opt/atlassian/confluence/conf/server.xml	2018-03-10 22:10:03.758414933 +0800
-@@ -1,6 +1,10 @@
- <Server port="8000" shutdown="SHUTDOWN" debug="0">
-     <Service name="Tomcat-Standalone">
+--- a/opt/atlassian/confluence/conf/server.xml	2018-04-12 11:46:34.411281607 +0800
++++ b/opt/atlassian/confluence/conf/server.xml	2018-04-12 11:48:35.548632885 +0800
+@@ -8,6 +8,7 @@
+          ==============================================================================================================
+         -->
          <Connector port="8090" connectionTimeout="20000" redirectPort="8443"
-+                proxyName="${catalina.connector.proxyName}"
-+                proxyPort="${catalina.connector.proxyPort}"
-+                scheme="${catalina.connector.scheme}"
-+                secure="${catalina.connector.secure}"
-                 maxThreads="48" minSpareThreads="10"
-                 enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
-                 protocol="org.apache.coyote.http11.Http11NioProtocol" />
-@@ -8,13 +12,13 @@
-         <Engine name="Standalone" defaultHost="localhost" debug="0">
++                   proxyName="${catalina.connector.proxyName}" proxyPort="${catalina.connector.proxyPort}" scheme="${catalina.connector.scheme}" secure="${catalina.connector.secure}"
+                    maxThreads="48" minSpareThreads="10"
+                    enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
+                    protocol="org.apache.coyote.http11.Http11NioProtocol"/>
+@@ -74,13 +75,13 @@
  
+         <Engine name="Standalone" defaultHost="localhost" debug="0">
              <Host name="localhost" debug="0" appBase="webapps" unpackWARs="true" autoDeploy="false" startStopThreads="4">
 -                <Context path="" docBase="../confluence" debug="0" reloadable="false" useHttpOnly="true">
 +                <Context path="${catalina.context.path}" docBase="../confluence" debug="0" reloadable="false" useHttpOnly="true">
-                     <!-- Logger is deprecated in Tomcat 5.5. Logging configuration for Confluence is specified in confluence/WEB-INF/classes/log4j.properties -->
-                     <Manager pathname="" />
-                     <Valve className="org.apache.catalina.valves.StuckThreadDetectionValve" threshold="60" />
+                     <!-- Logging configuration for Confluence is specified in confluence/WEB-INF/classes/log4j.properties -->
+                     <Manager pathname=""/>
+                     <Valve className="org.apache.catalina.valves.StuckThreadDetectionValve" threshold="60"/>
                  </Context>
  
--                <Context path="${confluence.context.path}/synchrony-proxy" docBase="../synchrony-proxy" debug="0" reloadable="false" useHttpOnly="true">
-+                <Context path="${catalina.context.path}/synchrony-proxy" docBase="../synchrony-proxy" debug="0" reloadable="false" useHttpOnly="true">
-                     <Valve className="org.apache.catalina.valves.StuckThreadDetectionValve" threshold="60" />
+-                <Context path="${confluence.context.path}/synchrony-proxy" docBase="../synchrony-proxy" debug="0"
++                <Context path="${catalina.context.path}/synchrony-proxy" docBase="../synchrony-proxy" debug="0"
+                          reloadable="false" useHttpOnly="true">
+                     <Valve className="org.apache.catalina.valves.StuckThreadDetectionValve" threshold="60"/>
                  </Context>
-             </Host>
