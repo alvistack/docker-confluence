@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bin/setenv.sh
---- a/opt/atlassian/confluence/bin/setenv.sh	2018-04-04 14:49:56.000000000 +0800
-+++ b/opt/atlassian/confluence/bin/setenv.sh	2018-04-12 11:44:02.553775850 +0800
+--- a/opt/atlassian/confluence/bin/setenv.sh	2018-04-26 20:55:11.819281826 +0800
++++ b/opt/atlassian/confluence/bin/setenv.sh	2018-04-26 20:59:56.375137220 +0800
 @@ -14,16 +14,16 @@ export CATALINA_PID
  
  PRGDIR=`dirname "$0"`
@@ -83,12 +83,13 @@ diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bi
 +CATALINA_OPTS="-Dcatalina.connector.scheme=${CATALINA_CONNECTOR_SCHEME:-http} ${CATALINA_OPTS}"
 +CATALINA_OPTS="-Dcatalina.connector.secure=${CATALINA_CONNECTOR_SECURE:-false} ${CATALINA_OPTS}"
 +CATALINA_OPTS="-Dcatalina.context.path=${CATALINA_CONTEXT_PATH} ${CATALINA_OPTS}"
+ CATALINA_OPTS="-XX:ReservedCodeCacheSize=256m -XX:+UseCodeCacheFlushing ${CATALINA_OPTS}"
  
  
- export CATALINA_OPTS
+Only in b/opt/atlassian/confluence/bin: setenv.sh.orig
 diff -urp a/opt/atlassian/confluence/conf/server.xml b/opt/atlassian/confluence/conf/server.xml
---- a/opt/atlassian/confluence/conf/server.xml	2018-04-12 11:46:34.411281607 +0800
-+++ b/opt/atlassian/confluence/conf/server.xml	2018-04-12 11:48:35.548632885 +0800
+--- a/opt/atlassian/confluence/conf/server.xml	2018-04-26 20:55:01.154264010 +0800
++++ b/opt/atlassian/confluence/conf/server.xml	2018-04-26 20:55:27.011528433 +0800
 @@ -8,6 +8,7 @@
           ==============================================================================================================
          -->
