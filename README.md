@@ -14,7 +14,7 @@ Supported Tags and Respective `Dockerfile` Links
 ------------------------------------------------
 
 -   [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/master/Dockerfile)
--   [`6.9` (6.9/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/6.9/Dockerfile)
+-   [`6.10` (6.10/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/6.10/Dockerfile)
 
 Overview
 --------
