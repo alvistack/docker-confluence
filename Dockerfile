@@ -18,7 +18,7 @@ ENV CONFLUENCE_OWNER             "daemon"
 ENV CONFLUENCE_GROUP             "daemon"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
-ENV CONFLUENCE_DOWNLOAD_URL      "http://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.10.0.tar.gz"
+ENV CONFLUENCE_DOWNLOAD_URL      "http://downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.10.1.tar.gz"
 ENV JAVA_HOME                    "/usr/java/default"
 ENV JVM_MINIMUM_MEMORY           "1024m"
 ENV JVM_MAXIMUM_MEMORY           "1024m"
@@ -64,8 +64,8 @@ RUN set -ex \
 # Install MySQL Connector/J JAR
 RUN set -ex \
     && ARCHIVE="`mktemp --suffix=.tar.gz`" \
-    && curl -skL https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46.tar.gz > $ARCHIVE \
-    && tar zxf $ARCHIVE --strip-components=1 -C $CONFLUENCE_CATALINA/confluence/WEB-INF/lib/ mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar \
+    && curl -skL https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.11.tar.gz > $ARCHIVE \
+    && tar zxf $ARCHIVE --strip-components=1 -C $CONFLUENCE_CATALINA/confluence/WEB-INF/lib/ mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar \
     && rm -rf $ARCHIVE
 
 # Install dumb-init
