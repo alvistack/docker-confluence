@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bin/setenv.sh
---- a/opt/atlassian/confluence/bin/setenv.sh	2018-04-26 20:55:11.819281826 +0800
-+++ b/opt/atlassian/confluence/bin/setenv.sh	2018-04-26 20:59:56.375137220 +0800
+--- a/opt/atlassian/confluence/bin/setenv.sh	2018-07-18 16:31:30.401049285 +0800
++++ b/opt/atlassian/confluence/bin/setenv.sh	2018-07-18 16:32:27.421444282 +0800
 @@ -14,16 +14,16 @@ export CATALINA_PID
  
  PRGDIR=`dirname "$0"`
@@ -86,10 +86,87 @@ diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bi
  CATALINA_OPTS="-XX:ReservedCodeCacheSize=256m -XX:+UseCodeCacheFlushing ${CATALINA_OPTS}"
  
  
-Only in b/opt/atlassian/confluence/bin: setenv.sh.orig
+diff -urp a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh b/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh
+--- a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-07-16 17:03:36.000000000 +0800
++++ b/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-07-18 21:55:17.529736170 +0800
+@@ -11,16 +11,16 @@ SYNCHRONY_HOME="$( cd "$( dirname "${BAS
+ ################################## Parameters to configure ##################################
+ 
+ # IP address or hostname of this Synchrony node -- should be reachable by other nodes
+-SERVER_IP="<SERVER_IP>"
++SYNCHRONY_BIND="${SYNCHRONY_BIND:-}"
+ 
+ # Your Confluence database information (can be copied from confluence.cfg.xml in your Confluence home directory)
+-DATABASE_URL="<YOUR_DATABASE_URL>"
+-DATABASE_USER="<DB_USERNAME>"
++SYNCHRONY_DATABASE_URL="${SYNCHRONY_DATABASE_URL:-}"
++SYNCHRONY_DATABASE_USERNAME="${SYNCHRONY_DATABASE_USERNAME:-}"
+ 
+ # We recommend setting your password with the environment variable SYNCHRONY_DATABASE_PASSWORD.
+ # This allows Synchrony to detect sensitive information without making it visible in the process command information.
+ # However, you may also hardcode your password here.
+-DATABASE_PASSWORD="<DB_PASSWORD>"
++SYNCHRONY_DATABASE_PASSWORD="${SYNCHRONY_DATABASE_PASSWORD:-}"
+ 
+ # # Uncomment this section if you want to do node discovery using TCP/IP
+ # # Comma separated list of IP addresses for each cluster node
+@@ -38,19 +38,18 @@ DATABASE_PASSWORD="<DB_PASSWORD>"
+ # -Dcluster.join.aws.tag.value=${ATL_HAZELCAST_NETWORK_AWS_TAG_VALUE}"
+ 
+ # # Uncomment this section if you want to do node discovery using multicast
+-# CLUSTER_JOIN_PROPERTIES="\
+-# -Dcluster.join.type=multicast"
++CLUSTER_JOIN_PROPERTIES="${CLUSTER_JOIN_PROPERTIES:-"-Dcluster.join.type=multicast"}"
+ 
+ # Locations of the synchrony-standalone.jar and database driver jar
+-DATABASE_DRIVER_PATH="<JDBC_DRIVER_PATH>"
+-SYNCHRONY_JAR_PATH="<PATH_TO_SYNCHRONY_STANDALONE_JAR>"
++DATABASE_DRIVER_PATH="${DATABASE_DRIVER_PATH:-"/opt/atlassian/confluence/confluence/WEB-INF/lib/postgresql-42.1.1.jar"}"
++SYNCHRONY_JAR_PATH="${SYNCHRONY_JAR_PATH:-"/opt/atlassian/confluence/confluence/WEB-INF/packages/synchrony-standalone.jar"}"
+ 
+ # URL that the browser uses to contact Synchrony -- should include the context path
+-SYNCHRONY_URL="<SYNCHRONY_URL>"
++SYNCHRONY_SERVICE_URL="${SYNCHRONY_SERVICE_URL:-}"
+ 
+ # Optionally override default system property values here. Consult docs for more optional properties
+ # Example usage: OPTIONAL_OVERRIDES="-Dsynchrony.port=8099 -Dcluster.listen.port=5701"
+-OPTIONAL_OVERRIDES=""
++OPTIONAL_OVERRIDES="${OPTIONAL_OVERRIDES:-}"
+ 
+ # # Uncomment this section if you're running Confluence in an IPv6 environment
+ # OPTIONAL_OVERRIDES="${OPTIONAL_OVERRIDES} -Dhazelcast.prefer.ipv4.stack=false"
+@@ -112,14 +111,13 @@ fi
+ 
+ _RUNJAVA="${JAVA_BIN} ${JAVA_OPTS}"
+ SYNCHRONY_OPTS="-classpath ${SYNCHRONY_JAR_PATH}:${DATABASE_DRIVER_PATH}"
+-SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.service.url=${SYNCHRONY_URL}"
+-SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.bind=${SERVER_IP}"
++SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.service.url=${SYNCHRONY_SERVICE_URL}"
++SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.bind=${SYNCHRONY_BIND}"
+ SYNCHRONY_OPTS="${SYNCHRONY_OPTS} ${CLUSTER_JOIN_PROPERTIES}"
+ SYNCHRONY_OPTS="${SYNCHRONY_OPTS} ${OPTIONAL_OVERRIDES}"
+-
+-[ -z "${SYNCHRONY_DATABASE_URL}" ] && SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.url=${DATABASE_URL}"
+-[ -z "${SYNCHRONY_DATABASE_USERNAME}" ] && SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.username=${DATABASE_USER}"
+-[ -z "${SYNCHRONY_DATABASE_PASSWORD}" ] && SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.password=${DATABASE_PASSWORD}"
++SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.url=${SYNCHRONY_DATABASE_URL}"
++SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.username=${SYNCHRONY_DATABASE_USERNAME}"
++SYNCHRONY_OPTS="${SYNCHRONY_OPTS} -Dsynchrony.database.password=${SYNCHRONY_DATABASE_PASSWORD}"
+ 
+ if [[ ${@} == *"-fg"* ]]; then
+ 	${_RUNJAVA} ${SYNCHRONY_OPTS} synchrony.core sql
+@@ -131,6 +129,6 @@ else
+ 	PID=$!
+ 	echo $PID > $SYNCHRONY_PID_FILE
+ 	echo "Starting Synchrony with PID ${PID}..."
+-	echo "Binding: ${SERVER_IP}"
+-	echo "Please wait 30 seconds, then check this heartbeat URL in your browser for an 'OK': ${SYNCHRONY_URL}/heartbeat"
++	echo "Binding: ${SYNCHRONY_BIND}"
++	echo "Please wait 30 seconds, then check this heartbeat URL in your browser for an 'OK': ${SYNCHRONY_SERVICE_URL}/heartbeat"
+ fi
 diff -urp a/opt/atlassian/confluence/conf/server.xml b/opt/atlassian/confluence/conf/server.xml
---- a/opt/atlassian/confluence/conf/server.xml	2018-04-26 20:55:01.154264010 +0800
-+++ b/opt/atlassian/confluence/conf/server.xml	2018-04-26 20:55:27.011528433 +0800
+--- a/opt/atlassian/confluence/conf/server.xml	2018-07-18 16:31:30.401049285 +0800
++++ b/opt/atlassian/confluence/conf/server.xml	2018-07-18 16:32:27.421444282 +0800
 @@ -8,6 +8,7 @@
           ==============================================================================================================
          -->
