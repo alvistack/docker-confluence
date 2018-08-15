@@ -121,7 +121,7 @@ diff -urp a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh b/opt/atla
  # Locations of the synchrony-standalone.jar and database driver jar
 -DATABASE_DRIVER_PATH="<JDBC_DRIVER_PATH>"
 -SYNCHRONY_JAR_PATH="<PATH_TO_SYNCHRONY_STANDALONE_JAR>"
-+DATABASE_DRIVER_PATH="${DATABASE_DRIVER_PATH:-"/opt/atlassian/confluence/confluence/WEB-INF/lib/postgresql-42.1.1.jar"}"
++DATABASE_DRIVER_PATH="${DATABASE_DRIVER_PATH:-"/opt/atlassian/confluence/confluence/WEB-INF/lib/postgresql-42.2.4.jar"}"
 +SYNCHRONY_JAR_PATH="${SYNCHRONY_JAR_PATH:-"/opt/atlassian/confluence/confluence/WEB-INF/packages/synchrony-standalone.jar"}"
  
  # URL that the browser uses to contact Synchrony -- should include the context path

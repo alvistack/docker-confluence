@@ -157,7 +157,7 @@ Default: `-Dcluster.join.type=multicast`
 
 This is the path to your database driver file.
 
-Default: `/opt/atlassian/confluence/confluence/WEB-INF/lib/postgresql-42.1.1.jar`
+Default: `/opt/atlassian/confluence/confluence/WEB-INF/lib/postgresql-42.2.4.jar`
 
 #### SYNCHRONY\_JAR\_PATH
 
