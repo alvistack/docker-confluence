@@ -1,6 +1,6 @@
 diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bin/setenv.sh
---- a/opt/atlassian/confluence/bin/setenv.sh	2018-07-18 16:31:30.401049285 +0800
-+++ b/opt/atlassian/confluence/bin/setenv.sh	2018-07-18 16:32:27.421444282 +0800
+--- a/opt/atlassian/confluence/bin/setenv.sh	2018-09-20 16:30:31.663528519 +0800
++++ b/opt/atlassian/confluence/bin/setenv.sh	2018-09-20 16:41:38.183310304 +0800
 @@ -14,16 +14,16 @@ export CATALINA_PID
  
  PRGDIR=`dirname "$0"`
@@ -65,7 +65,7 @@ diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bi
  export CONFLUENCE_CONTEXT_PATH
  $JRE_HOME/bin/java -jar $CATALINA_HOME/bin/synchrony-proxy-watchdog.jar $CATALINA_HOME
  echo "---------------------------------------------------------------------------"
-@@ -65,12 +65,17 @@ CATALINA_OPTS="-XX:-PrintGCDetails -XX:+
+@@ -65,14 +65,20 @@ CATALINA_OPTS="-XX:-PrintGCDetails -XX:+
  CATALINA_OPTS="-Xloggc:$LOGBASEABS/logs/gc-`date +%F_%H-%M-%S`.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=2M ${CATALINA_OPTS}"
  CATALINA_OPTS="-XX:G1ReservePercent=20 ${CATALINA_OPTS}"
  CATALINA_OPTS="-Djava.awt.headless=true ${CATALINA_OPTS}"
@@ -82,13 +82,16 @@ diff -urp a/opt/atlassian/confluence/bin/setenv.sh b/opt/atlassian/confluence/bi
 +CATALINA_OPTS="-Dcatalina.connector.proxyPort=${CATALINA_CONNECTOR_PROXYPORT:-} ${CATALINA_OPTS}"
 +CATALINA_OPTS="-Dcatalina.connector.scheme=${CATALINA_CONNECTOR_SCHEME:-http} ${CATALINA_OPTS}"
 +CATALINA_OPTS="-Dcatalina.connector.secure=${CATALINA_CONNECTOR_SECURE:-false} ${CATALINA_OPTS}"
-+CATALINA_OPTS="-Dcatalina.context.path=${CATALINA_CONTEXT_PATH} ${CATALINA_OPTS}"
++CATALINA_OPTS="-Dcatalina.context.path=${CATALINA_CONTEXT_PATH:-} ${CATALINA_OPTS}"
  CATALINA_OPTS="-XX:ReservedCodeCacheSize=256m -XX:+UseCodeCacheFlushing ${CATALINA_OPTS}"
  
  
+ export CATALINA_OPTS
+ 
++sed -i "s/\(<session-timeout>\).*\(<\/session-timeout>\)/\1${SESSION_TIMEOUT:-60}\2/g" ${CONFLUENCE_CATALINA}/confluence/WEB-INF/web.xml
 diff -urp a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh b/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh
---- a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-07-16 17:03:36.000000000 +0800
-+++ b/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-07-18 21:55:17.529736170 +0800
+--- a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-09-20 16:30:31.663528519 +0800
++++ b/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh	2018-09-20 16:26:11.000000000 +0800
 @@ -11,16 +11,16 @@ SYNCHRONY_HOME="$( cd "$( dirname "${BAS
  ################################## Parameters to configure ##################################
  
@@ -165,8 +168,8 @@ diff -urp a/opt/atlassian/confluence/bin/synchrony/start-synchrony.sh b/opt/atla
 +	echo "Please wait 30 seconds, then check this heartbeat URL in your browser for an 'OK': ${SYNCHRONY_SERVICE_URL}/heartbeat"
  fi
 diff -urp a/opt/atlassian/confluence/conf/server.xml b/opt/atlassian/confluence/conf/server.xml
---- a/opt/atlassian/confluence/conf/server.xml	2018-07-18 16:31:30.401049285 +0800
-+++ b/opt/atlassian/confluence/conf/server.xml	2018-07-18 16:32:27.421444282 +0800
+--- a/opt/atlassian/confluence/conf/server.xml	2018-09-20 16:30:31.663528519 +0800
++++ b/opt/atlassian/confluence/conf/server.xml	2018-09-20 16:26:11.000000000 +0800
 @@ -8,6 +8,7 @@
           ==============================================================================================================
          -->
