@@ -28,7 +28,7 @@ ENV CATALINA_CONNECTOR_SCHEME    "http"
 ENV CATALINA_CONNECTOR_SECURE    "false"
 ENV CATALINA_CONTEXT_PATH        ""
 ENV JVM_SUPPORT_RECOMMENDED_ARGS "-Datlassian.plugins.enable.wait=300"
-ENV TZ                           "Etc/UTC"
+ENV TZ                           "UTC"
 
 VOLUME  $CONFLUENCE_HOME
 WORKDIR $CONFLUENCE_HOME
@@ -42,7 +42,7 @@ CMD        [ "/etc/init.d/confluence", "start", "-fg" ]
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y alien apt-transport-https apt-utils aptitude bzip2 ca-certificates curl debian-archive-keyring debian-keyring git htop patch psmisc python-apt rsync software-properties-common sudo unzip vim wget zip \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y alien apt-transport-https apt-utils aptitude bzip2 ca-certificates curl debian-archive-keyring debian-keyring git htop patch psmisc python-apt rsync software-properties-common sudo tzdata unzip vim wget zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Oracle JRE
