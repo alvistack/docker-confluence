@@ -177,6 +177,16 @@ You can choose to specify additional system properties.
 
 Default: *NONE*
 
+### Misc configuration
+
+Other else misc configuration.
+
+#### TZ
+
+Default timezone for the docker instance
+
+Default: `Etc/UTC`
+
 Upgrade
 -------
 
