@@ -29,7 +29,7 @@ Start Atlassian Confluence Server:
 
     # Pull latest image
     docker pull alvistack/confluence
-
+    
     # Run as detach
     docker run \
         -itd \
