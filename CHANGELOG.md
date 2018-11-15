@@ -1,6 +1,10 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 6.12.x-0alvistack1 - TBC
+## 6.12.2-0alvistackx - TBC
+
+## 6.12.2-0alvistack2 - 2018-11-15
+
+  - Add (a lot of) custom fonts for server-side macro rendering
 
 ## 6.12.1-0alvistack3 - 2018-10-29
 
