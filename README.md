@@ -12,8 +12,8 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 ## Supported Tags and Respective `Dockerfile` Links
 
   - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/master/Dockerfile)
+  - [`6.14` (6.14/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/6.14/Dockerfile)
   - [`6.13` (6.13/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/6.13/Dockerfile)
-  - [`6.12` (6.12/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/6.12/Dockerfile)
 
 ## Overview
 
