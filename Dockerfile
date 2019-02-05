@@ -14,8 +14,8 @@
 
 FROM ubuntu:18.04
 
-ENV CONFLUENCE_OWNER             "daemon"
-ENV CONFLUENCE_GROUP             "daemon"
+ENV CONFLUENCE_OWNER             "confluence"
+ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
 ENV CONFLUENCE_DOWNLOAD_URL      "https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.14.0.tar.gz"
