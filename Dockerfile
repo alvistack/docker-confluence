@@ -40,6 +40,11 @@ EXPOSE 8090
 ENTRYPOINT [ "dumb-init", "--" ]
 CMD        [ "docker-entrypoint.sh" ]
 
+# Explicitly set system user UID/GID
+RUN set -ex \
+    && groupadd -r $CONFLUENCE_OWNER \
+    && useradd -r -g $CONFLUENCE_GROUP -d $CONFLUENCE_HOME -M -s /usr/sbin/nologin $CONFLUENCE_OWNER
+
 # Prepare APT depedencies
 RUN set -ex \
     && apt-get update \
