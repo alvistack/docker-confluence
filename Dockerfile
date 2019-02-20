@@ -45,7 +45,7 @@ RUN set -ex \
     && groupadd -r $CONFLUENCE_OWNER \
     && useradd -r -g $CONFLUENCE_GROUP -d $CONFLUENCE_HOME -M -s /usr/sbin/nologin $CONFLUENCE_OWNER
 
-# Prepare APT depedencies
+# Prepare APT dependencies
 RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential curl git libffi-dev libssl-dev python python-dev \
