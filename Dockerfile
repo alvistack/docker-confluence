@@ -18,7 +18,7 @@ ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
-ENV CONFLUENCE_DOWNLOAD_URL      "https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.14.1.tar.gz"
+ENV CONFLUENCE_DOWNLOAD_URL      "https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.14.2.tar.gz"
 ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "1024m"
 ENV JVM_MAXIMUM_MEMORY           "1024m"
@@ -45,7 +45,7 @@ RUN set -ex \
     && groupadd -r $CONFLUENCE_OWNER \
     && useradd -r -g $CONFLUENCE_GROUP -d $CONFLUENCE_HOME -M -s /usr/sbin/nologin $CONFLUENCE_OWNER
 
-# Prepare APT depedencies
+# Prepare APT dependencies
 RUN set -ex \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential curl git libffi-dev libssl-dev python python-dev \
