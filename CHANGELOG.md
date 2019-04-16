@@ -1,11 +1,16 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 6.13.x-0alvistack1 - TBC
+## 6.15.2-0alvistackx - TBC
+
+### Major Changes
+
+## 6.15.2-0alvistack2 - 2019-04-16
 
 ### Major Changes
 
   - Run systemd service with specific system user
   - Explicitly set system user UID/GID
+  - Porting to Molecule based
 
 ## 6.13.0-1alvistack1 - 2018-12-10
 
