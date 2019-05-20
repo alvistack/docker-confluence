@@ -1,8 +1,15 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 6.15.2-0alvistackx - TBC
+## 6.15.3-0alvistackx - TBC
 
 ### Major Changes
+
+## 6.15.3-0alvistack4 - 2019-05-20
+
+### Major Changes
+
+  - Bugfix "Build times out because no output was received"
+  - Upgrade minimal Ansible support to 2.8.0
 
 ## 6.15.2-0alvistack2 - 2019-04-16
 
