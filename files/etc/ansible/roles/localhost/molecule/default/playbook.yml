@@ -31,7 +31,4 @@
         - { state: "latest", name: "openjdk-8-jdk" }
       java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
     - role: confluence
-      confluence_download:
-        url: "{{ lookup('env','CONFLUENCE_DOWNLOAD_URL') }}"
-        dest: "{{ lookup('env','CONFLUENCE_DOWNLOAD_DEST') }}"
-        checksum: "{{ lookup('env','CONFLUENCE_DOWNLOAD_CHECKSUM') }}"
+      confluence_version: "{{ lookup('env','CONFLUENCE_VERSION') }}"

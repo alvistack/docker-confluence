@@ -14,13 +14,11 @@
 
 FROM ubuntu:18.04
 
+ENV CONFLUENCE_VERSION           "6.15.4"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
-ENV CONFLUENCE_DOWNLOAD_URL      "https://product-downloads.atlassian.com/software/confluence/downloads/atlassian-confluence-6.15.3.tar.gz"
-ENV CONFLUENCE_DOWNLOAD_DEST     "/tmp/atlassian-confluence-6.15.3.tar.gz"
-ENV CONFLUENCE_DOWNLOAD_CHECKSUM "sha1:04e9a4907b2d5d7a09ae7609304a220eadeef55b"
 ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "1024m"
 ENV JVM_MAXIMUM_MEMORY           "1024m"
