@@ -42,8 +42,8 @@ CMD        [ "docker-entrypoint.sh" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \
-    && groupadd -r $CONFLUENCE_OWNER \
-    && useradd -r -g $CONFLUENCE_GROUP -d $CONFLUENCE_HOME -M -s /usr/sbin/nologin $CONFLUENCE_OWNER
+    && groupadd -g 8090 $CONFLUENCE_OWNER \
+    && useradd -u 8090 -r -g $CONFLUENCE_GROUP -d $CONFLUENCE_HOME -M -s /usr/sbin/nologin $CONFLUENCE_OWNER
 
 # Prepare APT dependencies
 RUN set -ex \
