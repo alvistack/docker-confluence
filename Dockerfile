@@ -14,7 +14,7 @@
 
 FROM ubuntu:18.04
 
-ENV CONFLUENCE_VERSION           "6.15.7"
+ENV CONFLUENCE_VERSION           "6.15.8"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
