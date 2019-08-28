@@ -14,12 +14,12 @@
 
 FROM ubuntu:18.04
 
+ENV JAVA_VERSION                 "1.8.0"
 ENV CONFLUENCE_VERSION           "6.15.8"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
 ENV CONFLUENCE_CATALINA          "/opt/atlassian/confluence"
-ENV JAVA_HOME                    "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JVM_MINIMUM_MEMORY           "1024m"
 ENV JVM_MAXIMUM_MEMORY           "1024m"
 ENV CATALINA_CONNECTOR_PROXYNAME ""
@@ -37,8 +37,8 @@ WORKDIR $CONFLUENCE_HOME
 EXPOSE 8000
 EXPOSE 8090
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/opt/atlassian/confluence/bin/start-confluence.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \
