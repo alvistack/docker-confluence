@@ -37,8 +37,8 @@ WORKDIR $CONFLUENCE_HOME
 EXPOSE 8000
 EXPOSE 8090
 
-ENTRYPOINT [ "dumb-init", "--" ]
-CMD        [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+CMD        [ "/opt/atlassian/confluence/bin/start-confluence.sh", "-fg" ]
 
 # Explicitly set system user UID/GID
 RUN set -ex \

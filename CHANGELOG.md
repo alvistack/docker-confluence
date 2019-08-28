@@ -1,8 +1,17 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 6.15.3-0alvistackx - TBC
+## 6.15.x-0alvistack1 - TBC
 
 ### Major Changes
+
+## 6.15.8-0alvistack3 - 2019-08-29
+
+### Major Changes
+
+  - Simplify parameters combination with `BAMBOO_VERSION`
+  - Ensure required folders exist with correct owner:group
+  - Prepend executable if command starts with an option
+  - Improve `ENTRYPOINT` and `CMD`
 
 ## 6.15.3-0alvistack5 - 2019-05-20
 
