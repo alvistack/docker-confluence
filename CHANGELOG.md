@@ -4,6 +4,8 @@
 
 ### Major Changes
 
+  - Allow the container to be stated with `--user`
+
 ## 6.15.8-0alvistack3 - 2019-08-29
 
 ### Major Changes

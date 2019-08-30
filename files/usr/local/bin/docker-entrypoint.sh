@@ -7,9 +7,12 @@ if [ "${1:0:1}" = '-' ]; then
     set -- /opt/atlassian/confluence/bin/start-confluence.sh "$@"
 fi
 
-# Ensure required folders exist with correct owner:group
-mkdir -p $CONFLUENCE_HOME
-chown -Rf $CONFLUENCE_OWNER:$CONFLUENCE_GROUP $CONFLUENCE_HOME
-chmod 0755 $CONFLUENCE_HOME
+# Allow the container to be stated with `--user`
+if [ "$1" = '/opt/atlassian/confluence/bin/start-confluence.sh' ] && [ "$(id -u)" = '0' ]; then
+    mkdir -p $CONFLUENCE_HOME
+    chown -Rf $CONFLUENCE_OWNER:$CONFLUENCE_GROUP $CONFLUENCE_HOME
+    chmod 0755 $CONFLUENCE_HOME
+    exec gosu $CONFLUENCE_OWNER "$BASH_SOURCE" "$@"
+fi
 
 exec "$@"
