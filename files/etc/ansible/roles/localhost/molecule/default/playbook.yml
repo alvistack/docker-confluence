@@ -27,6 +27,6 @@
   remote_user: root
   roles:
     - role: java
-      java_version: "{{ lookup('env','JAVA_VERSION') }}"
+      java_release: "{{ lookup('env','JAVA_RELEASE') }}"
     - role: confluence
       confluence_version: "{{ lookup('env','CONFLUENCE_VERSION') }}"
