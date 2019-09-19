@@ -31,6 +31,10 @@
       java_release: "8"
     - role: confluence
       confluence_version: "{{ lookup('env','CONFLUENCE_VERSION') }}"
+      confluence_owner: "{{ lookup('env','CONFLUENCE_OWNER') }}"
+      confluence_group: "{{ lookup('env','CONFLUENCE_GROUP') }}"
+      confluence_home: "{{ lookup('env','CONFLUENCE_HOME') }}"
+      confluence_catalina: "{{ lookup('env','CONFLUENCE_CATALIN') }}"
       confluence_jvm_minimum_memory: "{{ lookup('env', 'JVM_MINIMUM_MEMORY') }}"
       confluence_jvm_maximum_memory: "{{ lookup('env', 'JVM_MAXIMUM_MEMORY') }}"
       confluence_catalina_connector_proxyname: "{{ lookup('env', 'CATALINA_CONNECTOR_PROXYNAME') }}"
