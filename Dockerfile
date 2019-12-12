@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV CONFLUENCE_VERSION           "7.1.2"
+ENV CONFLUENCE_VERSION           "7.2.0"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
