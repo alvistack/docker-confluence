@@ -19,7 +19,7 @@ ENV LC_ALL "en_US.utf8"
 ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
-ENV JAVA_RELEASE                 "8"
+ENV OPENJDK_RELEASE              "8"
 ENV CONFLUENCE_VERSION           "7.2.0"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"

@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-java_release: "{{ lookup('env', 'JAVA_RELEASE') }}"
+openjdk_release: "{{ lookup('env', 'OPENJDK_RELEASE') }}"
 confluence_version: "{{ lookup('env','CONFLUENCE_VERSION') }}"
 confluence_owner: "{{ lookup('env','CONFLUENCE_OWNER') }}"
 confluence_group: "{{ lookup('env','CONFLUENCE_GROUP') }}"
