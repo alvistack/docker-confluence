@@ -1,8 +1,16 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 7.1.0-XalvistackY - TBC
+## 7.2.1-XalvistackY - TBC
 
 ### Major Changes
+
+## 7.2.1-3alvistack1 - 2020-01-15
+
+### Major Changes
+
+  - Replace `dumb-init` with `tini`, as like as `docker --init`
+  - Replace `java` with `openjdk`
+  - Include release specific vars and tasks
 
 ## 7.1.0-2alvistack1 - 2019-11-05
 

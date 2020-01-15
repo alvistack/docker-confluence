@@ -42,7 +42,7 @@ WORKDIR $CONFLUENCE_HOME
 EXPOSE 8000
 EXPOSE 8090
 
-ENTRYPOINT [ "dumb-init", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "start-confluence.sh", "-fg" ]
 
 # Hotfix for en_US.utf8 locale
