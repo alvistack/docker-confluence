@@ -20,7 +20,7 @@ ENV SHELL  "/bin/bash"
 ENV TZ     "UTC"
 
 ENV OPENJDK_RELEASE              "8"
-ENV CONFLUENCE_VERSION           "7.2.1"
+ENV CONFLUENCE_VERSION           "7.2.2"
 ENV CONFLUENCE_OWNER             "confluence"
 ENV CONFLUENCE_GROUP             "confluence"
 ENV CONFLUENCE_HOME              "/var/atlassian/application-data/confluence"
