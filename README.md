@@ -11,13 +11,18 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`latest` (master/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/master/Dockerfile)
-  - [`7.3` (7.3/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/7.3/Dockerfile)
-  - [`7.2` (7.2/Dockerfile)](https://github.com/alvistack/docker-confluence/blob/7.2/Dockerfile)
+  - [`7.3`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.3/Dockerfile.j2)
+  - [`7.2`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.2/Dockerfile.j2)
 
 ## Overview
 
 This Docker container makes it easy to get an instance of Confluence up and running.
+
+Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
+
+  - Minimized `Dockerfile` for meta data definition
+  - Provision by Ansible and Molecule Docker driver in single layer
+  - Handle `ENTRYPOINT` with [tini](https://github.com/krallin/tini)
 
 ### Quick Start
 
