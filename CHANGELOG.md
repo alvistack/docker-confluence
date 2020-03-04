@@ -1,10 +1,15 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 7.2.1-XalvistackY - TBC
+## 7.3.2-XalvistackY - TBC
+
+### Major Changes
+
+## 7.3.2-4alvistack1 - 2020-03-04
 
 ### Major Changes
 
   - Revamp with Molecule and `docker commit`
+  - Hotfix for systemd
 
 ## 7.2.1-3alvistack1 - 2020-01-15
 
