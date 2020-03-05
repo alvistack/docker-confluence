@@ -14,21 +14,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-namespace: alvistack
-name: docker-confluence
-description: Docker Image Packaging for Atlassian Confluence
-
-version: VERSION
-readme: README.md
-license: Apache-2.0
-
-repository: https://github.com/alvistack/docker-confluence
-documentation: https://github.com/alvistack/docker-confluence
-homepage: https://github.com/alvistack/docker-confluence
-issues: https://github.com/alvistack/docker-confluence/issues
-
-dependencies: {}
-tags:
-  - system
-authors:
-  - Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+confluence_version: "7.3.2"
