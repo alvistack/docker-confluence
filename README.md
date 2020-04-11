@@ -1,6 +1,6 @@
 # Docker Image Packaging for Atlassian Confluence
 
-[![Travis](https://img.shields.io/travis/alvistack/docker-confluence.svg)](https://travis-ci.org/alvistack/docker-confluence)
+[![Travis](https://img.shields.io/travis/com/alvistack/docker-confluence.svg)](https://travis-ci.com/alvistack/docker-confluence)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence.svg)](https://hub.docker.com/r/alvistack/confluence/)
@@ -149,7 +149,7 @@ The `latest` tag matches the most recent [GitHub Release](https://github.com/alv
 
 ### `alvistack/confluence:<version>`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.org/alvistack/docker-confluence) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-confluence) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
