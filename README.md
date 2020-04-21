@@ -11,8 +11,8 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`7.3`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.3/Dockerfile.j2)
-  - [`7.2`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.2/Dockerfile.j2)
+  - [`7.4`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.4/Dockerfile.j2)
+  - [`7.3`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.3/Dockerfile.j3)
 
 ## Overview
 
