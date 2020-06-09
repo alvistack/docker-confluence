@@ -63,7 +63,7 @@ WORKDIR $CONFLUENCE_HOME
 EXPOSE 8000
 EXPOSE 8090
 
-ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
+ENTRYPOINT [ "catatonit", "-g", "--", "docker-entrypoint.sh" ]
 CMD        [ "start-confluence.sh", "-fg" ]
 
 # Explicitly set system user UID/GID

@@ -4,6 +4,7 @@
 
 ### Major Changes
 
+  - Replace `tini` with `catatonit`
 ## 7.3.4-4alvistack3 - 2020-04-11
 
 ### Major Changes
