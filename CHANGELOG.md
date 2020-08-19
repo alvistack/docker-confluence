@@ -1,8 +1,11 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 7.5.1-XalvistackY - TBC
+## 7.7.2-XalvistackY - TBC
 
 ### Major Changes
+
+  - Upgrade Travis CI test as Ubuntu Focal based
+  - Upgrade minimal Ansible support to 2.10.0
 
 ## 7.5.1-4alvistack4 - 2020-06-10
 
