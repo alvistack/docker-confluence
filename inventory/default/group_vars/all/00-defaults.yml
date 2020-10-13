@@ -20,8 +20,8 @@ confluence_owner: "confluence"
 confluence_group: "confluence"
 confluence_home: "/var/atlassian/application-data/confluence"
 confluence_catalina: "/opt/atlassian/confluence"
-confluence_jvm_minimum_memory: "1024m"
-confluence_jvm_maximum_memory: "1024m"
+confluence_jvm_minimum_memory: "2048m"
+confluence_jvm_maximum_memory: "2048m"
 confluence_catalina_connector_proxyname: ~
 confluence_catalina_connector_proxyport: ~
 confluence_catalina_connector_scheme: "http"
