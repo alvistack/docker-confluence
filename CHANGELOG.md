@@ -4,6 +4,10 @@
 
 ### Major Changes
 
+## 7.8.1-4alvistack4 - 2020-10-14
+
+### Major Changes
+
   - Upgrade minimal AdoptOpenJDK support to 11
   - Migrate GC from `G1GC` to `ZGC`
   - Refine Molecule matrix
