@@ -9,10 +9,10 @@ Confluence is where you create, organize and discuss work with your team.
 
 Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
-## Supported Tags and Respective `Dockerfile` Links
+## Supported Tags and Respective Packer Template Links
 
-  - [`7.8`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.8/Dockerfile.j2)
-  - [`7.7`](https://github.com/alvistack/docker-confluence/blob/master/molecule/7.7/Dockerfile.j3)
+  - [`7.8`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/packer/7.8/packer.json)
+  - [`7.7`](https://github.com/alvistack/docker-confluence/blob/master/packer/7.7/packer.json)
 
 ## Overview
 
@@ -20,8 +20,7 @@ This Docker container makes it easy to get an instance of Confluence up and runn
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Minimized `Dockerfile` for meta data definition
-  - Provision by Ansible and Molecule Docker driver in single layer
+  - Packaging by Packer Docker builder and Ansible provisioner in single layer
   - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
 
 ### Quick Start
