@@ -1,6 +1,6 @@
 # Docker Image Packaging for Atlassian Confluence
 
-## 7.8.1-XalvistackY - TBC
+## 7.8.3-XalvistackY - TBC
 
 ### Major Changes
 
