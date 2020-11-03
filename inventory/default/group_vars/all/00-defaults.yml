@@ -15,7 +15,7 @@
 # limitations under the License.
 
 openjdk_release: "11"
-confluence_version: "7.8.1"
+confluence_version: "7.8.3"
 confluence_owner: "confluence"
 confluence_group: "confluence"
 confluence_home: "/var/atlassian/application-data/confluence"
