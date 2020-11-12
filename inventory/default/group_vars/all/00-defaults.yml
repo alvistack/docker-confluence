@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-openjdk_release: "11"
-confluence_version: "7.8.3"
+openjdk_release: "8"
+confluence_version: "7.9.0"
 confluence_owner: "confluence"
 confluence_group: "confluence"
 confluence_home: "/var/atlassian/application-data/confluence"
@@ -30,5 +30,5 @@ confluence_catalina_context_path: "/"
 confluence_jvm_support_recommended_args: >-
   -Datlassian.plugins.enable.wait=300
   -XX:+UnlockExperimentalVMOptions
-  -XX:+UseContainerSupport
-  -XX:+UseZGC
+  -XX:+UseCGroupMemoryLimitForHeap
+  -XX:MaxRAMFraction=1
