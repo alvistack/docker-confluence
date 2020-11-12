@@ -8,8 +8,8 @@ language: shell
 
 env:
   jobs:
+    - PACKER_BUILDER_NAME="7.9"
     - PACKER_BUILDER_NAME="7.8"
-    - PACKER_BUILDER_NAME="7.7"
 
 before_install:
   - |
