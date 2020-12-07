@@ -11,8 +11,8 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`7.9`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/packer/7.9/packer.json)
-  - [`7.8`](https://github.com/alvistack/docker-confluence/blob/master/packer/7.8/packer.json)
+  - [`7.9`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.9/packer.json)
+  - [`7.8`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.8/packer.json)
 
 ## Overview
 
