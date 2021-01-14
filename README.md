@@ -1,9 +1,9 @@
 # Docker Image Packaging for Atlassian Confluence
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-confluence/master)](https://gitlab.com/alvistack/docker-confluence/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-confluence/master)](https://gitlab.com/alvistack/docker-confluence/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence.svg)](https://hub.docker.com/r/alvistack/confluence/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.10.svg)](https://hub.docker.com/r/alvistack/confluence-7.10)
 
 Confluence is where you create, organize and discuss work with your team.
 
@@ -11,8 +11,10 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`7.10`, `latest`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.10/packer.json)
-  - [`7.9`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.9/packer.json)
+  - [`alvistack/confluence-7.10`](https://hub.docker.com/r/alvistack/confluence-7.10)
+      - [`packer/docker-7.10/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.10/packer.json)
+  - [`alvistack/confluence-7.9`](https://hub.docker.com/r/alvistack/confluence-7.9)
+      - [`packer/docker-7.9/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.9/packer.json)
 
 ## Overview
 
@@ -142,13 +144,13 @@ For evaluations you can use the built-in database that will store its files in t
 
 ## Versioning
 
-### `alvistack/confluence:latest`
+### `YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/docker-confluence/releases) of this repository. Thus using `alvistack/confluence:latest` or `alvistack/confluence` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-confluence/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/confluence:<version>`
+### `YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/docker-confluence) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/docker-confluence/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
