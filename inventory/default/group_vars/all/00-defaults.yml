@@ -32,3 +32,4 @@ confluence_jvm_support_recommended_args: >-
   -XX:+UnlockExperimentalVMOptions
   -XX:+UseCGroupMemoryLimitForHeap
   -XX:MaxRAMFraction=1
+confluence_session_timeout: "120"
