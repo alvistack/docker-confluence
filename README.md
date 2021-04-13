@@ -3,7 +3,7 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-confluence/master)](https://gitlab.com/alvistack/docker-confluence/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.11.svg)](https://hub.docker.com/r/alvistack/confluence-7.11)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.12.svg)](https://hub.docker.com/r/alvistack/confluence-7.12)
 
 Confluence is where you create, organize and discuss work with your team.
 
@@ -11,10 +11,10 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
 
+  - [`alvistack/confluence-7.12`](https://hub.docker.com/r/alvistack/confluence-7.12)
+      - [`packer/docker-7.12/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.12/packer.json)
   - [`alvistack/confluence-7.11`](https://hub.docker.com/r/alvistack/confluence-7.11)
       - [`packer/docker-7.11/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.11/packer.json)
-  - [`alvistack/confluence-7.10`](https://hub.docker.com/r/alvistack/confluence-7.10)
-      - [`packer/docker-7.10/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.10/packer.json)
 
 ## Overview
 
@@ -34,7 +34,7 @@ Volume permission is NOT managed by entry scripts. To get started you can use a 
 Start Atlassian Confluence Server:
 
     # Pull latest image
-    docker pull alvistack/confluence
+    docker pull alvistack/confluence-7.12
     
     # Run as detach
     docker run \
@@ -42,7 +42,7 @@ Start Atlassian Confluence Server:
         --name confluence \
         --publish 8090:8090 \
         --volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
-        alvistack/confluence
+        alvistack/confluence-7.12
 
 **Success**. Confluence is now available on <http://localhost:8090>
 
