@@ -4,9 +4,7 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.12.svg)](https://hub.docker.com/r/alvistack/confluence-7.12)
-
 Confluence is where you create, organize and discuss work with your team.
-
 Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
@@ -19,7 +17,6 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 ## Overview
 
 This Docker container makes it easy to get an instance of Confluence up and running.
-
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
   - Packaging by Packer Docker builder and Ansible provisioner in single layer
@@ -28,38 +25,29 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 ### Quick Start
 
 For the `Confluence_HOME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
-
 Volume permission is NOT managed by entry scripts. To get started you can use a data volume, or named volumes.
-
 Start Atlassian Confluence Server:
-
-    # Pull latest image
-    docker pull alvistack/confluence-7.12
-    
-    # Run as detach
-    docker run \
-        -itd \
-        --name confluence \
-        --publish 8090:8090 \
-        --volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
-        alvistack/confluence-7.12
-
+\# Pull latest image
+docker pull alvistack/confluence-7.12
+\# Run as detach
+docker run   
+\-itd   
+\--name confluence   
+\--publish 8090:8090   
+\--volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence   
+alvistack/confluence-7.12
 **Success**. Confluence is now available on <http://localhost:8090>
-
 Please ensure your container has the necessary resources allocated to it. We recommend 2GiB of memory allocated to accommodate both the application server and the git processes. See [Supported Platforms](https://confluence.atlassian.com/display/Confluence/Supported+Platforms) for further information.
 
 ## Upgrade
 
 To upgrade to a more recent version of Confluence Server you can simply stop the Confluence
 container and start a new one based on a more recent image:
-
-    docker stop confluence
-    docker rm confluence
-    docker run ... (see above)
-
+docker stop confluence
+docker rm confluence
+docker run ... (see above)
 As your data is stored in the data volume directory on the host, it will still
 be available after the upgrade.
-
 Note: Please make sure that you don't accidentally remove the confluence container and its volumes using the -v option.
 
 ## Backup
