@@ -3,7 +3,7 @@
 <img src="/alvistack.svg" width="75" alt="AlviStack">
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-confluence/master)](https://gitlab.com/alvistack/docker-confluence/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/releases)
+[![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.15.svg)](https://hub.docker.com/r/alvistack/confluence-7.15)
 
@@ -70,7 +70,7 @@ For evaluations you can use the built-in database that will store its files in t
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-confluence/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/docker-confluence/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
