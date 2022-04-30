@@ -8,7 +8,7 @@
         "ENV TZ=UTC",
         "ENV CONFLUENCE_OWNER=confluence",
         "ENV CONFLUENCE_GROUP=confluence",
-        "ENV /var/atlassian/application-data/confluence=/var/atlassian/application-data/confluence",
+        "ENV CONFLUENCE_HOME=/var/atlassian/application-data/confluence",
         "ENV CONFLUENCE_CATALINA=/opt/atlassian/confluence",
         "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/atlassian/confluence/bin",
         "VOLUME $/var/atlassian/application-data/confluence",
