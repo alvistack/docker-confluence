@@ -97,7 +97,7 @@
         set -euxo pipefail
         cd /opt/atlassian/confluence/confluence/WEB-INF/lib
         rm -rf *postgresql*.jar
-        cp -rfp /usr/share/java/postgresql-*.jar
+        cp -rfp /usr/share/java/postgresql-*.jar .
         rm -rf *mysql-connector-java*.jar
         cp -rfp /usr/share/java/mysql-connector-java-*.jar .
         chown -Rf confluence:conflunce *.jar
