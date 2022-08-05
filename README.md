@@ -17,6 +17,8 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
       - [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
   - [`alvistack/confluence-7.18`](https://hub.docker.com/r/alvistack/confluence-7.18)
       - [`packer/docker-7.18/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.18/packer.json)
+  - [`alvistack/confluence-7.13`](https://hub.docker.com/r/alvistack/confluence-7.13)
+      - [`packer/docker-7.13/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.13/packer.json)
 
 ## Overview
 
