@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-confluence
+name: confluence
 description: Docker Image Packaging for Atlassian Confluence
 
 version: 0.0.0
