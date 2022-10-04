@@ -5,7 +5,7 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-confluence/master)](https://gitlab.com/alvistack/docker-confluence/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.19.svg)](https://hub.docker.com/r/alvistack/confluence-7.19)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-7.20.svg)](https://hub.docker.com/r/alvistack/confluence-7.20)
 
 Confluence is where you create, organize and discuss work with your team.
 
@@ -13,10 +13,10 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
 
+  - [`alvistack/confluence-7.20`](https://hub.docker.com/r/alvistack/confluence-7.20)
+      - [`packer/docker-7.20/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.20/packer.json)
   - [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
       - [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
-  - [`alvistack/confluence-7.18`](https://hub.docker.com/r/alvistack/confluence-7.18)
-      - [`packer/docker-7.18/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.18/packer.json)
   - [`alvistack/confluence-7.13`](https://hub.docker.com/r/alvistack/confluence-7.13)
       - [`packer/docker-7.13/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.13/packer.json)
 
@@ -38,7 +38,7 @@ Volume permission is NOT managed by entry scripts. To get started you can use a 
 Start Atlassian Confluence Server:
 
     # Pull latest image
-    docker pull alvistack/confluence-7.19
+    docker pull alvistack/confluence-7.20
     
     # Run as detach
     docker run \
@@ -46,7 +46,7 @@ Start Atlassian Confluence Server:
         --name confluence \
         --publish 8090:8090 \
         --volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
-        alvistack/confluence-7.19
+        alvistack/confluence-7.20
 
 **Success**. Confluence is now available on <http://localhost:8090>
 
