@@ -13,12 +13,12 @@ Learn more about Confluence: <https://www.atlassian.com/software/confluence>
 
 ## Supported Tags and Respective Packer Template Links
 
-  - [`alvistack/confluence-7.20`](https://hub.docker.com/r/alvistack/confluence-7.20)
-      - [`packer/docker-7.20/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.20/packer.json)
-  - [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
-      - [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
-  - [`alvistack/confluence-7.13`](https://hub.docker.com/r/alvistack/confluence-7.13)
-      - [`packer/docker-7.13/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.13/packer.json)
+-   [`alvistack/confluence-7.20`](https://hub.docker.com/r/alvistack/confluence-7.20)
+    -   [`packer/docker-7.20/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.20/packer.json)
+-   [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
+    -   [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
+-   [`alvistack/confluence-7.13`](https://hub.docker.com/r/alvistack/confluence-7.13)
+    -   [`packer/docker-7.13/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.13/packer.json)
 
 ## Overview
 
@@ -26,8 +26,8 @@ This Docker container makes it easy to get an instance of Confluence up and runn
 
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
-  - Packaging by Packer Docker builder and Ansible provisioner in single layer
-  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
+-   Packaging by Packer Docker builder and Ansible provisioner in single layer
+-   Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
 
 ### Quick Start
 
@@ -39,7 +39,7 @@ Start Atlassian Confluence Server:
 
     # Pull latest image
     docker pull alvistack/confluence-7.20
-    
+
     # Run as detach
     docker run \
         -itd \
@@ -80,11 +80,11 @@ Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](
 
 ## License
 
-  - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Code released under [Apache License 2.0](LICENSE)
+-   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
-  - Wong Hoi Sing Edison
-      - <https://twitter.com/hswong3i>
-      - <https://github.com/hswong3i>
+-   Wong Hoi Sing Edison
+    -   <https://twitter.com/hswong3i>
+    -   <https://github.com/hswong3i>
