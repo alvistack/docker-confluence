@@ -134,6 +134,45 @@ default:
   before_script:
     - *script-git-submodule
 
+build:confluence-8.0-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.0-docker"
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: "confluence-8.0"
+    _PROVIDER: "docker"
+
+test:confluence-8.0-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.0-docker"
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: "confluence-8.0"
+    _PROVIDER: "docker"
+  needs:
+    - build:confluence-8.0-docker
+
+deploy:confluence-8.0-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.0-docker"
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: "confluence-8.0"
+    _PROVIDER: "docker"
+  needs:
+    - test:confluence-8.0-docker
+
 build:confluence-7.20-docker:
   <<: *job-packer-build
   stage: build
@@ -211,42 +250,3 @@ deploy:confluence-7.19-docker:
     _PROVIDER: "docker"
   needs:
     - test:confluence-7.19-docker
-
-build:confluence-7.13-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.13-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "confluence-7.13"
-    _PROVIDER: "docker"
-
-test:confluence-7.13-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.13-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-7.13"
-    _PROVIDER: "docker"
-  needs:
-    - build:confluence-7.13-docker
-
-deploy:confluence-7.13-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.13-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-7.13"
-    _PROVIDER: "docker"
-  needs:
-    - test:confluence-7.13-docker
