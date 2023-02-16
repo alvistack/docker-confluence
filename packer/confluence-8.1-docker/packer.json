@@ -13,7 +13,7 @@
         "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/atlassian/confluence/bin",
         "VOLUME /var/atlassian/application-data/confluence",
         "WORKDIR /var/atlassian/application-data/confluence",
-        "EXPOSE 8.10",
+        "EXPOSE 8000",
         "EXPOSE 8090",
         "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
         "CMD [\"start-confluence.sh\", \"-fg\"]"
