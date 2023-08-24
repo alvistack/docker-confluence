@@ -134,6 +134,45 @@ default:
     - *script-git-submodule
     - *script-linters
 
+build:confluence-8.5-docker:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.5-docker"
+    paths:
+      - packer/*/output-docker
+  variables:
+    _IMAGE: "confluence-8.5"
+    _PROVIDER: "docker"
+
+test:confluence-8.5-docker:
+  <<: *job-molecule-test
+  stage: test
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.5-docker"
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: "confluence-8.5"
+    _PROVIDER: "docker"
+  needs:
+    - build:confluence-8.5-docker
+
+deploy:confluence-8.5-docker:
+  <<: *job-docker-push
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-confluence-8.5-docker"
+    paths:
+      - packer/*/output-docker
+    policy: pull
+  variables:
+    _IMAGE: "confluence-8.5"
+    _PROVIDER: "docker"
+  needs:
+    - test:confluence-8.5-docker
+
 build:confluence-8.4-docker:
   <<: *job-packer-build
   stage: build
@@ -172,84 +211,6 @@ deploy:confluence-8.4-docker:
     _PROVIDER: "docker"
   needs:
     - test:confluence-8.4-docker
-
-build:confluence-8.3-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-8.3-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "confluence-8.3"
-    _PROVIDER: "docker"
-
-test:confluence-8.3-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-8.3-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-8.3"
-    _PROVIDER: "docker"
-  needs:
-    - build:confluence-8.3-docker
-
-deploy:confluence-8.3-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-8.3-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-8.3"
-    _PROVIDER: "docker"
-  needs:
-    - test:confluence-8.3-docker
-
-build:confluence-7.20-docker:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.20-docker"
-    paths:
-      - packer/*/output-docker
-  variables:
-    _IMAGE: "confluence-7.20"
-    _PROVIDER: "docker"
-
-test:confluence-7.20-docker:
-  <<: *job-molecule-test
-  stage: test
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.20-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-7.20"
-    _PROVIDER: "docker"
-  needs:
-    - build:confluence-7.20-docker
-
-deploy:confluence-7.20-docker:
-  <<: *job-docker-push
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-confluence-7.20-docker"
-    paths:
-      - packer/*/output-docker
-    policy: pull
-  variables:
-    _IMAGE: "confluence-7.20"
-    _PROVIDER: "docker"
-  needs:
-    - test:confluence-7.20-docker
 
 build:confluence-7.19-docker:
   <<: *job-packer-build
