@@ -15,19 +15,19 @@
 # limitations under the License.
 
 # confluence
-confluence_owner: "confluence"
-confluence_group: "confluence"
-confluence_home: "/var/atlassian/application-data/confluence"
-confluence_catalina: "/opt/atlassian/confluence"
-confluence_jvm_minimum_memory: "2048m"
-confluence_jvm_maximum_memory: "2048m"
-confluence_jvm_reserved_code_cache_size: "512m"
+confluence_owner: confluence
+confluence_group: confluence
+confluence_home: /var/atlassian/application-data/confluence
+confluence_catalina: /opt/atlassian/confluence
+confluence_jvm_minimum_memory: 2048m
+confluence_jvm_maximum_memory: 2048m
+confluence_jvm_reserved_code_cache_size: 512m
 confluence_catalina_connector_port: "8090"
-confluence_catalina_connector_scheme: ~
-confluence_catalina_connector_secure: ~
-confluence_catalina_connector_proxyname: ~
-confluence_catalina_connector_proxyport: ~
-confluence_catalina_context_path: ~
+confluence_catalina_connector_scheme:
+confluence_catalina_connector_secure:
+confluence_catalina_connector_proxyname:
+confluence_catalina_connector_proxyport:
+confluence_catalina_context_path:
 confluence_jvm_support_recommended_args: >-
   -Datlassian.plugins.enable.wait=300
   -XX:+IgnoreUnrecognizedVMOptions
