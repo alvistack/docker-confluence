@@ -19,14 +19,14 @@ Learn more about Confluence:
 
 ## Supported Tags and Respective Packer Template Links
 
--   [`alvistack/confluence-8.9`](https://hub.docker.com/r/alvistack/confluence-8.9)
-    -   [`packer/docker-8.9/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.9/packer.json)
--   [`alvistack/confluence-8.8`](https://hub.docker.com/r/alvistack/confluence-8.8)
-    -   [`packer/docker-8.8/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.8/packer.json)
--   [`alvistack/confluence-8.5`](https://hub.docker.com/r/alvistack/confluence-8.5)
-    -   [`packer/docker-8.5/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.5/packer.json)
--   [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
-    -   [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
+- [`alvistack/confluence-8.9`](https://hub.docker.com/r/alvistack/confluence-8.9)
+  - [`packer/docker-8.9/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.9/packer.json)
+- [`alvistack/confluence-8.8`](https://hub.docker.com/r/alvistack/confluence-8.8)
+  - [`packer/docker-8.8/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.8/packer.json)
+- [`alvistack/confluence-8.5`](https://hub.docker.com/r/alvistack/confluence-8.5)
+  - [`packer/docker-8.5/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.5/packer.json)
+- [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
+  - [`packer/docker-7.19/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-7.19/packer.json)
 
 ## Overview
 
@@ -36,10 +36,10 @@ and running.
 Based on [Official Ubuntu Docker
 Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
--   Packaging by Packer Docker builder and Ansible provisioner in single
-    layer
--   Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
+- Packaging by Packer Docker builder and Ansible provisioner in single
+  layer
+- Handle `ENTRYPOINT` with
+  [catatonit](https://github.com/openSUSE/catatonit)
 
 ### Quick Start
 
@@ -115,12 +115,12 @@ latest packages provided by the base image project.
 
 ## License
 
--   Code released under [Apache License 2.0](LICENSE)
--   Docs released under [CC BY
-    4.0](http://creativecommons.org/licenses/by/4.0/)
+- Code released under [Apache License 2.0](LICENSE)
+- Docs released under [CC BY
+  4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
--   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+- Wong Hoi Sing Edison
+  - <https://twitter.com/hswong3i>
+  - <https://github.com/hswong3i>
