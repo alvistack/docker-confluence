@@ -14,7 +14,7 @@
         "VOLUME /var/atlassian/application-data/confluence",
         "WORKDIR /var/atlassian/application-data/confluence",
         "EXPOSE 8000",
-        "EXPOSE 9.00",
+        "EXPOSE 8090",
         "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
         "CMD [\"start-confluence.sh\", \"-fg\"]"
       ],
