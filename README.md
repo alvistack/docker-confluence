@@ -23,8 +23,6 @@ Learn more about Confluence:
   - [`packer/docker-9.0/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-9.0/packer.json)
 - [`alvistack/confluence-8.9`](https://hub.docker.com/r/alvistack/confluence-8.9)
   - [`packer/docker-8.9/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.9/packer.json)
-- [`alvistack/confluence-8.8`](https://hub.docker.com/r/alvistack/confluence-8.8)
-  - [`packer/docker-8.8/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.8/packer.json)
 - [`alvistack/confluence-8.5`](https://hub.docker.com/r/alvistack/confluence-8.5)
   - [`packer/docker-8.5/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-8.5/packer.json)
 - [`alvistack/confluence-7.19`](https://hub.docker.com/r/alvistack/confluence-7.19)
