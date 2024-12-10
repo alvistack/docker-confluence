@@ -14,6 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-confluence_release: "9.1"
+confluence_release: "9.2"
 
 openjdk_release: "21"
