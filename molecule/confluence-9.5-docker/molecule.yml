@@ -18,7 +18,7 @@ driver:
   name: podman
 platforms:
   - name: ${_MOLECULE_INSTANCE_NAME}-1
-    image: alvistack/confluence-9.4
+    image: alvistack/confluence-9.5
     pre_build_image: true
     privileged: true
 dependency:
