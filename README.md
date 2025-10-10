@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-confluence.svg)](https:/
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-confluence.svg)](https://github.com/alvistack/docker-confluence/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-10.0.svg)](https://hub.docker.com/r/alvistack/confluence-10.0)
+Pulls](https://img.shields.io/docker/pulls/alvistack/confluence-10.1.svg)](https://hub.docker.com/r/alvistack/confluence-10.1)
 
 Confluence is where you create, organize and discuss work with your
 team.
@@ -19,10 +19,8 @@ Learn more about Confluence:
 
 ## Supported Tags and Respective Packer Template Links
 
-- [`alvistack/confluence-10.0`](https://hub.docker.com/r/alvistack/confluence-10.0)
-  - [`packer/docker-10.0/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-10.0/packer.json)
-- [`alvistack/confluence-9.5`](https://hub.docker.com/r/alvistack/confluence-9.5)
-  - [`packer/docker-9.5/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-9.5/packer.json)
+- [`alvistack/confluence-10.1`](https://hub.docker.com/r/alvistack/confluence-10.1)
+  - [`packer/docker-10.1/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-10.1/packer.json)
 - [`alvistack/confluence-9.2`](https://hub.docker.com/r/alvistack/confluence-9.2)
   - [`packer/docker-9.2/packer.json`](https://github.com/alvistack/docker-confluence/blob/master/packer/docker-9.2/packer.json)
 - [`alvistack/confluence-8.5`](https://hub.docker.com/r/alvistack/confluence-8.5)
@@ -55,7 +53,7 @@ can use a data volume, or named volumes.
 Start Atlassian Confluence Server:
 
     # Pull latest image
-    docker pull alvistack/confluence-10.0
+    docker pull alvistack/confluence-10.1
 
     # Run as detach
     docker run \
@@ -63,7 +61,7 @@ Start Atlassian Confluence Server:
         --name confluence \
         --publish 8090:8090 \
         --volume /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence \
-        alvistack/confluence-10.0
+        alvistack/confluence-10.1
 
 **Success**. Confluence is now available on <http://localhost:8090>
 
